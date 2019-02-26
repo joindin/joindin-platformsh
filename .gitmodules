@@ -1,0 +1,6 @@
+[submodule "web/joindin-web2"]
+	path = web/joindin-web2
+	url = https://github.com/joindin/joindin-web2.git
+[submodule "api/joindin-api"]
+	path = api/joindin-api
+	url = https://github.com/joindin/joindin-api.git
