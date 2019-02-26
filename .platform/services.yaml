@@ -1,0 +1,15 @@
+mysqldb:
+  type: mysql:10.0
+  disk: 2048
+  configuration:
+    schemas:
+      - joindin
+    endpoints:
+      admin:
+        default_schema: joindin
+        privileges:
+          joindin: admin
+      joindin:
+        default_schema: joindin
+        privileges:
+          joind: rw
