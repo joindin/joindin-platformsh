@@ -9,7 +9,7 @@ type: 'php:7.2'
 # On PHP, there are multiple build flavors available. Pretty much everyone
 # except Drupal 7 users will want the composer flavor.
 build:
-  flavor: composer
+  flavor: none
 
 # The relationships of the application with services or other applications.
 # The left-hand side is the name of the relationship as it will be exposed
@@ -22,6 +22,8 @@ relationships:
 hooks:
   # Build hooks can modify the application files on disk but not access any services like databases.
   build: |
+    cd joindin-api
+    composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
   #  rm web/app_dev.php
   # Deploy hooks can access services but the file system is now read-only.
   deploy: |
