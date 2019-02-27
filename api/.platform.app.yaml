@@ -17,7 +17,6 @@ build:
 # side is in the form `<service name>:<endpoint name>`.
 relationships:
   database: 'mysqldb:joindin'
-  admin: 'mysqldb:admin'
 
 # The hooks that will be triggered when the package is deployed.
 hooks:
