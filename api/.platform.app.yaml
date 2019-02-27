@@ -49,16 +49,3 @@ web:
     "/":
       root: "joindin-api"
       passthru: "/src/public/index.php"
-
-mysqldb:
-    type: mysql:10.2
-    disk: 256
-    configuration:
-        schemas:
-            - joindin
-        endpoints:
-            admin:
-                default_schema: joindin
-                privileges:
-                    joindin: admin
-
