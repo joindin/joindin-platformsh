@@ -22,6 +22,8 @@ relationships:
 hooks:
   # Build hooks can modify the application files on disk but not access any services like databases.
   build: |
+    copy config_platformsh.php joindin-web2/src/config/php
+    copy database_platformsh.php joindin-web2/src/database.php
     cd joindin-api
     composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
   #  rm web/app_dev.php
