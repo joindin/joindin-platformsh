@@ -51,7 +51,7 @@ web:
       passthru: "/src/public/index.php"
 
 mysqldb:
-    type: mysql: 10.2
+    type: mysql:10.2
     disk: 256
     configuration:
         schemas:
