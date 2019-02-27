@@ -13,25 +13,24 @@ if (! defined('BASEPATH')) {
 }
 if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
     $relationships = json_decode(base64_decode($_ENV['PLATFORM_RELATIONSHIPS']), true);
-    if (empty($databases['default']) && ! empty($relationships)) {
-        foreach ($relationships as $key => $relationship) {
+    if (! empty($relationships['database'])) {
+        foreach ($relationships['database'] as $instance) {
             $active_group  = "default";
             $active_record = true;
-            foreach ($relationship as $instance) {
+            $db['default']['hostname'] = $instance['host'];
+            $db['default']['username'] = $instance['username'];
+            $db['default']['password'] = $instance['password'];
+            $db['default']['database'] = $instance['path'];
+            $db['default']['dbdriver'] = $instance['scheme'];
+            $db['default']['dbprefix'] = "";
+            $db['default']['pconnect'] = true;
+            $db['default']['db_debug'] = true;
+            $db['default']['cache_on'] = false;
+            $db['default']['cachedir'] = "";
+            $db['default']['char_set'] = "utf8";
+            $db['default']['dbcollat'] = "utf8_general_ci";
 
-                $db['default']['hostname'] = $instance['host'];
-                $db['default']['username'] = $instance['username'];
-                $db['default']['password'] = $instance['password'];
-                $db['default']['database'] = $instance['path'];
-                $db['default']['dbdriver'] = $instance['scheme'];
-                $db['default']['dbprefix'] = "";
-                $db['default']['pconnect'] = true;
-                $db['default']['db_debug'] = true;
-                $db['default']['cache_on'] = false;
-                $db['default']['cachedir'] = "";
-                $db['default']['char_set'] = "utf8";
-                $db['default']['dbcollat'] = "utf8_general_ci";
-            }
+            break;
         }
     }
 }
