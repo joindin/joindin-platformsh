@@ -57,10 +57,6 @@ mysqldb:
         schemas:
             - joindin
         endpoints:
-            joindin:
-                default_schema: joindin
-                privileges:
-                    joindin: admin
             admin:
                 default_schema: joindin
                 privileges:
