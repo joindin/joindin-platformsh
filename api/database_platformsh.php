@@ -17,19 +17,21 @@ if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
         foreach ($relationships as $key => $relationship) {
             $active_group  = "default";
             $active_record = true;
+            foreach ($relationship as $instance) {
 
-            $db['default']['hostname'] = $instance['host'];
-            $db['default']['username'] = $instance['username'];
-            $db['default']['password'] = $instance['password'];
-            $db['default']['database'] = $instance['path'];
-            $db['default']['dbdriver'] = $instance['scheme'];
-            $db['default']['dbprefix'] = "";
-            $db['default']['pconnect'] = true;
-            $db['default']['db_debug'] = true;
-            $db['default']['cache_on'] = false;
-            $db['default']['cachedir'] = "";
-            $db['default']['char_set'] = "utf8";
-            $db['default']['dbcollat'] = "utf8_general_ci";
+                $db['default']['hostname'] = $instance['host'];
+                $db['default']['username'] = $instance['username'];
+                $db['default']['password'] = $instance['password'];
+                $db['default']['database'] = $instance['path'];
+                $db['default']['dbdriver'] = $instance['scheme'];
+                $db['default']['dbprefix'] = "";
+                $db['default']['pconnect'] = true;
+                $db['default']['db_debug'] = true;
+                $db['default']['cache_on'] = false;
+                $db['default']['cachedir'] = "";
+                $db['default']['char_set'] = "utf8";
+                $db['default']['dbcollat'] = "utf8_general_ci";
+            }
         }
     }
 }
