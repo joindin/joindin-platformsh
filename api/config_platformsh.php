@@ -46,4 +46,3 @@ $config =  array(
         'max_comment_edit_minutes' => 15,
     )
 );
-
