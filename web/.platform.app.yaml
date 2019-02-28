@@ -56,10 +56,3 @@ web:
     "/":
       root: "joindin-web2/web"
       passthru: "/index.php"
-
-runtime:
-  extensions:
-    - redis
-
-relationships:
-  redis: "rediscache:redis"
