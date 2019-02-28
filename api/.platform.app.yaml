@@ -57,3 +57,6 @@ web:
         - index.php
       scripts: true
       allow: true
+      rules:
+        ^(.*)$:
+          pasthru: '/index.php/$1'
