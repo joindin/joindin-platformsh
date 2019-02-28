@@ -37,10 +37,10 @@ disk: 256
 # The 'mounts' describe writable, persistent filesystem mounts in the application.
 # The keys are directory paths relative to the application root. The values are a
 # mount definition. In this case, `web-files` is just a unique name for the mount.
-#mounts:
-#  'web/files':
-#    source: local
-#    source_path: 'web-files'
+mounts:
+  'joindin-web2/log':
+    source: local
+    source_path: 'log'
 
 # The configuration of the application when it is exposed to the web.
 web:
