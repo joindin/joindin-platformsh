@@ -25,6 +25,7 @@ if (empty($relationships)) {
 
 $active_group  = "default";
 $active_record = true;
+var_dump($relationships);
 foreach ($relationships as $key => $instance) {
     $db[$key]['hostname'] = $instance['host'];
     $db[$key]['username'] = $instance['username'];
