@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+DEFAULT=master
+
+git submodule update --recursive --remote
+ENVIRONMENT=${1:-$DEFAULT}
+git push -u platform $ENVIRONMENT

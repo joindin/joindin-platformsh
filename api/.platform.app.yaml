@@ -9,7 +9,7 @@ type: 'php:7.2'
 # On PHP, there are multiple build flavors available. Pretty much everyone
 # except Drupal 7 users will want the composer flavor.
 build:
-  flavor: composer
+  flavor: none #Setting this to composer has no effect in submoduled repos.
 
 #variables:
 #  php:
