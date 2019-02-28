@@ -47,5 +47,5 @@ disk: 256
 web:
   locations:
     "/":
-      root: "joindin-api"
-      passthru: "/src/public/index.php"
+      root: "joindin-api/src/public"
+      passthru: "/index.php"

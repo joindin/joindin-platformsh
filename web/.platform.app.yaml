@@ -45,6 +45,6 @@ disk: 256
 web:
   locations:
     "/":
-      root: "joindin-web2"
-      passthru: "/web/index.php"
+      root: "joindin-web2/web"
+      passthru: "/index.php"
 
