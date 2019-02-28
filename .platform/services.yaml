@@ -12,4 +12,4 @@ mysqldb:
       joindin:
         default_schema: joindin
         privileges:
-          joindin: rw
+          joindin: admin
