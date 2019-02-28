@@ -48,3 +48,5 @@ $config = array(
         ),
     ),
 );
+
+var_dump($config);
