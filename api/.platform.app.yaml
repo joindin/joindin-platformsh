@@ -58,5 +58,5 @@ web:
       scripts: true
       allow: true
       rules:
-        ^(.*)$:
+        '^(.*)$':
           passthru: '/index.php/$1'
