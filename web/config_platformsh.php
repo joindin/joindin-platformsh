@@ -2,6 +2,20 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+$routes = json_decode(base64_decode($_ENV['PLATFORM_ROUTES']), true);
+if (empty($routes)) {
+    throw new \Exception("PLATFORM_ROUTES Not Set Or Empty.");
+}
+
+function getDomainFor(string $id) {
+    global $routes;
+    foreach ($routes as $domain => $route) {
+        if ($route['id'] == $id) {
+            return $domain;
+        }
+    }
+}
+
 $variables = json_decode(base64_decode($_ENV['PLATFORM_VARIABLES']), true);
 
 if (empty($variables)) {
@@ -17,7 +31,7 @@ $config = array(
         ),
         'custom' => array(
             'redisKeyPrefix' => 'live-',
-            'apiUrl' => $variables['web.config.slim.custom.apiUrl'],
+            'apiUrl' => getDomainFor("api"),
             'googleAnalyticsId' => $variables['web.config.slim.custom.googleAnalyticsId'],
             'csrfSecret' => $variables['web.config.slim.custom.csrfSecret']
             //'useMinifiedFiles' => true

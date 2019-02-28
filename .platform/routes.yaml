@@ -4,6 +4,7 @@
 
 "https://api.{default}/":
   type: upstream
+  id: "api"
   upstream: "api:http"
 
 "https://www.{default}/":
