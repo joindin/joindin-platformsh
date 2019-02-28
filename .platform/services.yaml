@@ -1,4 +1,4 @@
-default:
+mysql:
   type: mysql:10.0
   disk: 256
   configuration:
@@ -13,3 +13,6 @@ default:
         default_schema: joindin
         privileges:
           joindin: rw
+
+redis:
+  type: redis:5.0

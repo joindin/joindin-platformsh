@@ -20,8 +20,8 @@ build:
 # to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
 # side is in the form `<service name>:<endpoint name>`.
 relationships:
-  default: 'default:joindin'
-  admin: 'default:admin'
+  default: 'mysql:joindin'
+  admin: 'mysql:admin'
 
 # The hooks that will be triggered when the package is deployed.
 hooks:
