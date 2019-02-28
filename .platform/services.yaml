@@ -1,4 +1,4 @@
-mysqldb:
+default:
   type: mysql:10.0
   disk: 256
   configuration:

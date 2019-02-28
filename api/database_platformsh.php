@@ -8,32 +8,36 @@
  * @license   http://github.com/joindin/joind.in/blob/master/doc/LICENSE JoindIn
  */
 
-if (! defined('BASEPATH')) {
+if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
-if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
-    $relationships = json_decode(base64_decode($_ENV['PLATFORM_RELATIONSHIPS']), true);
-    if (! empty($relationships['database'])) {
-        foreach ($relationships['database'] as $instance) {
-            $active_group  = "default";
-            $active_record = true;
-            $db['default']['hostname'] = $instance['host'];
-            $db['default']['username'] = $instance['username'];
-            $db['default']['password'] = $instance['password'];
-            $db['default']['database'] = $instance['path'];
-            $db['default']['dbdriver'] = $instance['scheme'];
-            $db['default']['dbprefix'] = "";
-            $db['default']['pconnect'] = true;
-            $db['default']['db_debug'] = true;
-            $db['default']['cache_on'] = false;
-            $db['default']['cachedir'] = "";
-            $db['default']['char_set'] = "utf8";
-            $db['default']['dbcollat'] = "utf8_general_ci";
 
-            break;
-        }
-    }
+$relationships = getenv('PLATFORM_RELATIONSHIPS');
+if ($relationships) {
+    $relationships = json_decode(base64_decode($relationships), true);
 }
+
+if (empty($relationships)) {
+    throw new \Exception("PLATFORM_RELATIONSHIPS Not Set or empty.");
+}
+
+$active_group  = "default";
+$active_record = true;
+foreach ($relationships as $key => $instance) {
+    $db[$key]['hostname'] = $instance['host'];
+    $db[$key]['username'] = $instance['username'];
+    $db[$key]['password'] = $instance['password'];
+    $db[$key]['database'] = $instance['path'];
+    $db[$key]['dbdriver'] = $instance['scheme'];
+    $db[$key]['dbprefix'] = "";
+    $db[$key]['pconnect'] = true;
+    $db[$key]['db_debug'] = true;
+    $db[$key]['cache_on'] = false;
+    $db[$key]['cachedir'] = "";
+    $db[$key]['char_set'] = "utf8";
+    $db[$key]['dbcollat'] = "utf8_general_ci";
+}
+
 
 
 /* End of file database.php */
