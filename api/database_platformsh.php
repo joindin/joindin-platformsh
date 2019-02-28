@@ -7,8 +7,6 @@
  * @copyright 2009 - 2012 Joind.in
  * @license   http://github.com/joindin/joind.in/blob/master/doc/LICENSE JoindIn
  */
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
@@ -25,8 +23,8 @@ if (empty($relationships)) {
 
 $active_group  = "default";
 $active_record = true;
-var_dump($relationships);
 foreach ($relationships as $key => $instance) {
+    $instance = $instance[0];
     $db[$key]['hostname'] = $instance['host'];
     $db[$key]['username'] = $instance['username'];
     $db[$key]['password'] = $instance['password'];
