@@ -23,8 +23,7 @@ if (empty($relationships)) {
     throw new \Exception("PLATFORM_RELATIONSHIPS Not Set or empty.");
 }
 
-$redis = $relationships['redis'][0];
-$redis['keyPrefix'] = 'live-';
+$redis     = $relationships['redis'][0];
 $variables = json_decode(base64_decode($_ENV['PLATFORM_VARIABLES']), true);
 
 if (empty($variables)) {
@@ -39,7 +38,12 @@ $config = [
             'secret_key' => $variables['web.config.slim.cookies.secret_key'],
         ],
         'custom'   => [
-            'redis'             => $redis,
+            'redis'             => [
+                'connection' => $redis,
+                'options'    => [
+                    'prefix' => 'live-',
+                ],
+            ],
             'apiUrl'            => getDomainFor("api"),
             'googleAnalyticsId' => $variables['web.config.slim.custom.googleAnalyticsId'],
             'csrfSecret'        => $variables['web.config.slim.custom.csrfSecret']
