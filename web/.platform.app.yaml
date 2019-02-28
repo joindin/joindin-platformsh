@@ -41,6 +41,10 @@ mounts:
   'joindin-web2/log':
     source: local
     source_path: 'log'
+  'joindin-web2/tmp':
+    source: local
+    source_path: 'tmp'
+
 
 # The configuration of the application when it is exposed to the web.
 web:
@@ -49,3 +53,9 @@ web:
       root: "joindin-web2/web"
       passthru: "/index.php"
 
+runtime:
+  extensions:
+    - redis
+
+relationships:
+  redis: "rediscache:redis"

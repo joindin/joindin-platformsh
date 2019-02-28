@@ -13,3 +13,6 @@ default:
         default_schema: joindin
         privileges:
           joindin: rw
+
+rediscache:
+  type: redis:5.0
