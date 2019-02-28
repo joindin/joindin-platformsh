@@ -59,4 +59,4 @@ web:
       allow: true
       rules:
         ^(.*)$:
-          pasthru: '/index.php/$1'
+          passthru: '/index.php/$1'
