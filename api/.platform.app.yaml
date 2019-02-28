@@ -11,6 +11,10 @@ type: 'php:7.2'
 build:
   flavor: composer
 
+variables:
+  php:
+      display_errors: off
+
 # The relationships of the application with services or other applications.
 # The left-hand side is the name of the relationship as it will be exposed
 # to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
