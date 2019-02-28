@@ -1,6 +1,18 @@
 #!/usr/bin/env bash
 DEFAULT=master
 
+STASHED=false
+if ! git diff-index --quiet HEAD --; then
+    git stash
+    STASHED=true
+fi
 git submodule update --recursive --remote
+git add api/joindin-api
+git add web/joindin-web
+git commit -m "Automatic Module Update"
+if ${STASHED}; then
+    git stash pop
+fi
+
 ENVIRONMENT=${1:-$DEFAULT}
-git push -u platform $ENVIRONMENT
+git push -u platform ${ENVIRONMENT}
