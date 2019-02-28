@@ -53,10 +53,10 @@ web:
     "/":
       root: "joindin-api/src/public"
       passthru: "/index.php"
-      index:
-        - index.php
-      scripts: true
-      allow: true
-      rules:
-        '^(.*)$':
-          passthru: '/index.php/$1'
+      #index:
+      #  - index.php
+      #scripts: true
+      #allow: true
+      #rules:
+      #  '^(.*)$':
+      #    passthru: '/index.php/$1'
