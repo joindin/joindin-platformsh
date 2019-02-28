@@ -7,6 +7,8 @@
  * @copyright 2009 - 2012 Joind.in
  * @license   http://github.com/joindin/joind.in/blob/master/doc/LICENSE JoindIn
  */
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
