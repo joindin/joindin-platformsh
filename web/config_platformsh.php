@@ -44,7 +44,7 @@ $config = [
                     'prefix' => 'live-',
                 ],
             ],
-            'apiUrl'            => getDomainFor("api"),
+            'apiUrl'            => rtrim(getDomainFor("api"), "/"),
             'googleAnalyticsId' => $variables['web.config.slim.custom.googleAnalyticsId'],
             'csrfSecret'        => $variables['web.config.slim.custom.csrfSecret']
             //'useMinifiedFiles' => true
