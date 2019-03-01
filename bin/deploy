@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-DEFAULT=master
+ENVIRONMENT=$(git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/\1/p')
 
 STASHED=false
 if ! git diff-index --quiet HEAD --; then
@@ -14,5 +14,5 @@ if ${STASHED}; then
     git stash pop
 fi
 
-ENVIRONMENT=${1:-$DEFAULT}
+ENVIRONMENT=${1:-$ENVIRONMENT}
 git push -u platform ${ENVIRONMENT}
