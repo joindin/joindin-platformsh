@@ -390,7 +390,7 @@ class EventApi extends BaseApi
     public function getCollection($uri, array $queryParams = array())
     {
         $events = (array)json_decode($this->apiGet($uri, $queryParams));
-        var_dump($events);die();
+        var_dump($uri);die();
         $meta   = array_pop($events);
 
         $collectionData = array();
