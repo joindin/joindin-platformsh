@@ -22,12 +22,14 @@ if (empty($relationships)) {
 }
 
 $redis     = $relationships['redis'][0];
+$redis['scheme'] = 'tcp';
+
 $variables = json_decode(base64_decode($_ENV['PLATFORM_VARIABLES']), true);
 
 if (empty($variables)) {
     throw new \Exception("PLATFORM_VARIABLES Not Set Or Empty.");
 }
-var_dump($redis);
+
 $config = [
     'slim' => [
         'mode'     => 'development',
