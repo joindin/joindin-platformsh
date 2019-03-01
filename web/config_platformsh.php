@@ -32,7 +32,7 @@ if (empty($variables)) {
 
 $config = [
     'slim' => [
-        'mode'     => 'development',
+        'mode'     => $variables['web.config.mode'],
         'debug'    => 1,
         'cookies'  => [
             'secret_key' => $variables['web.config.slim.cookies.secret_key'],
