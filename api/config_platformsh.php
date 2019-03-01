@@ -7,6 +7,15 @@ if (empty($variables)) {
     throw new \Exception("PLATFORM_VARIABLES Not Set Or Empty.");
 }
 
+
+if ('development' == $variables['api.config.mode']) {
+    error_reporting(-1);
+    ini_set('display_errors', 1);
+    ini_set('html_errors', 1);
+    ini_set('display_startup_errors', 1);
+}
+
+
 $config = [
     'mode'        => $variables['api.config.mode'],
 
