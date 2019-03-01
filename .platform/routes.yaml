@@ -2,7 +2,7 @@
   type: upstream
   upstream: "web:http"
 
-"http://api.{default}/":
+"https://api.{default}/":
   type: upstream
   id: "api"
   upstream: "api:http"
