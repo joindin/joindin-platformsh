@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', 0);
 
 $variables = json_decode(base64_decode($_ENV['PLATFORM_VARIABLES']), true);
 
