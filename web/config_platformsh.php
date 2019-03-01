@@ -32,8 +32,8 @@ if (empty($variables)) {
 
 $config = [
     'slim' => [
-        'mode'     => 'live',
-        'debug'    => 0,
+        'mode'     => 'development',
+        'debug'    => 1,
         'cookies'  => [
             'secret_key' => $variables['web.config.slim.cookies.secret_key'],
         ],
