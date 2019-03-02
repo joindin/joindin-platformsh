@@ -29,7 +29,7 @@ $config = [
             $variables['api.config.oauth.expirable_client_ids'],
         ],
     ],
-    'event_image_path' => __DIR__.'/../../joindin-web2/web/inc/img/event_icons/',
+    'event_image_path' => $variables['api.config.event_image_path'],
     'email'            => [
         'contact'        => $variables['api.config.email.contact'],
         'from'           => $variables['api.config.email.from'],
