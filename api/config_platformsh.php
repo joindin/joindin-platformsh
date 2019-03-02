@@ -7,6 +7,10 @@ if (empty($variables)) {
     throw new \Exception("PLATFORM_VARIABLES Not Set Or Empty.");
 }
 
+$smtpHost = getenv('PLATFORM_SMTP_HOST');
+if (empty($smtpHost)) {
+    throw new Exception('PLATFORM_SMTP_HOST not set or empty.');
+}
 
 if ('development' == $variables['api.config.mode']) {
     error_reporting(-1);
@@ -33,7 +37,14 @@ $config = [
     'email'            => [
         'contact'        => $variables['api.config.email.contact'],
         'from'           => $variables['api.config.email.from'],
-        'forward_all_to' => false,
+	'forward_all_to' => false,
+	'smtp' => [
+            'host'     => $smtpHost,
+            'port'     => 25,
+            'username' => null,
+            'password' => null,
+            'security' => null
+        ]
     ],
     'twitter'          => [
         // set up the key at https://apps.twitter.com/
