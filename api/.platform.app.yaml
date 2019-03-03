@@ -11,9 +11,11 @@ type: 'php:7.2'
 build:
   flavor: none #Setting this to composer has no effect in submoduled repos.
 
-#variables:
-#  php:
-#      display_errors: off
+variables:
+  php:
+      display_errors: off
+      session.cookie_httponly: on
+      session.cookie_secure: on
 
 # The relationships of the application with services or other applications.
 # The left-hand side is the name of the relationship as it will be exposed

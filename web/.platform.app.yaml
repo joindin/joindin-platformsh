@@ -56,3 +56,9 @@ web:
     "/":
       root: "joindin-web2/web"
       passthru: "/index.php"
+
+variables:
+  php:
+      display_errors: off
+      session.cookie_httponly: on
+      session.cookie_secure: on
