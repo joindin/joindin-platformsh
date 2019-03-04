@@ -13,7 +13,6 @@ build:
 
 variables:
   php:
-      display_errors: off
       session.cookie_httponly: on
       session.cookie_secure: on
 
