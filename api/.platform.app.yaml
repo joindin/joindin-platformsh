@@ -62,5 +62,5 @@ web:
       #rules:
       #  '^(.*)$':
       #    passthru: '/index.php/$1'
-    "inc/":
+    "/inc":
       root: "joindin-api/tmp"
