@@ -9,7 +9,7 @@ fi
 git submodule update --recursive --remote
 git add api/joindin-api
 git add web/joindin-web
-git commit -m "Automatic Module Update"
+git commit -a -m "Automatic Module Update"
 if ${STASHED}; then
     git stash pop
 fi
