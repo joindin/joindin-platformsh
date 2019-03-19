@@ -1,6 +1,6 @@
 #If You change the the name of the mysgl service it will
 #wipe the db make sure you have a good backup if that is your intent.
-tmp:
+mysql:
   type: mysql:10.0
   disk: 256
   configuration:
