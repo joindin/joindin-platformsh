@@ -15,4 +15,4 @@ if ${STASHED}; then
 fi
 
 ENVIRONMENT=${1:-$ENVIRONMENT}
-git push -u platform ${ENVIRONMENT}
+git push -u origin ${ENVIRONMENT}
