@@ -4,12 +4,12 @@ ini_set('display_errors', 0);
 $variables = json_decode(base64_decode($_ENV['PLATFORM_VARIABLES']), true);
 
 if (empty($variables)) {
-    throw new \Exception("PLATFORM_VARIABLES Not Set Or Empty.");
+    echo "PLATFORM_VARIABLES Not Set Or Empty.";
 }
 
 $smtpHost = getenv('PLATFORM_SMTP_HOST');
 if (empty($smtpHost)) {
-    throw new Exception('PLATFORM_SMTP_HOST not set or empty.');
+    echo 'PLATFORM_SMTP_HOST not set or empty.';
 }
 
 if ('development' == $variables['api.config.mode']) {
