@@ -1,7 +1,7 @@
 # .platform.app.yaml
 
 # The name of this application, which must be unique within a project.
-name: 'api'
+name: 'util'
 
 # The type key specifies the language and version for your application.
 type: 'php:7.3'
@@ -13,8 +13,8 @@ build:
 
 variables:
   php:
-      session.cookie_httponly: on
-      session.cookie_secure: on
+    session.cookie_httponly: on
+    session.cookie_secure: on
 
 # The relationships of the application with services or other applications.
 # The left-hand side is the name of the relationship as it will be exposed
@@ -22,15 +22,12 @@ variables:
 # side is in the form `<service name>:<endpoint name>`.
 relationships:
   default: 'mysql:joindin'
+  admin: 'mysql:admin'
 
 # The hooks that will be triggered when the package is deployed.
 hooks:
   # Build hooks can modify the application files on disk but not access any services like databases.
   build: |
-    cp config_platformsh.php joindin-api/src/config.php
-    cp database_platformsh.php joindin-api/src/database.php
-    cd joindin-api
-    composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
   #  rm web/app_dev.php
   # Deploy hooks can access services but the file system is now read-only.
   deploy: |
@@ -44,7 +41,7 @@ disk: 256
 # The keys are directory paths relative to the application root. The values are a
 # mount definition. In this case, `web-files` is just a unique name for the mount.
 mounts:
-  'joindin-api/tmp':
+  'joindin-util':
     source: local
     source_path: 'tmp'
 
@@ -52,14 +49,6 @@ mounts:
 web:
   locations:
     "/":
-      root: "joindin-api/src/public"
+      root: "joindin-util"
       passthru: "/index.php"
-      #index:
-      #  - index.php
-      #scripts: true
-      #allow: true
-      #rules:
-      #  '^(.*)$':
-      #    passthru: '/index.php/$1'
-    "/inc":
-      root: "joindin-api/tmp"
+
