@@ -57,7 +57,7 @@ $config = [
             'cache' => $variables['web.config.slim.twig.cache'],
         ],
         'facebook' => [
-            'app_id' => $variables['web.config.facebook.app_id'],
+            'app_id' => $variables['api.config.facebook.app_id'],
         ],
     ],
 ];
