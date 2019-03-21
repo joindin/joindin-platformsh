@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 ENVIRONMENT=$(git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/\1/p')
 
+if [ -x "$(command -v platform)" ]; then
+    platform snapshot:create
+fi
+
 STASHED=false
 if ! git diff-index --quiet HEAD --; then
     git stash
