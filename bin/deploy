@@ -12,7 +12,7 @@ if ! git diff-index --quiet HEAD --; then
 fi
 git submodule update --recursive --remote
 git add api/joindin-api
-git add web/joindin-web
+git add web/joindin-web2
 git commit -a -m "Automatic Module Update"
 if ${STASHED}; then
     git stash pop
