@@ -68,7 +68,11 @@ web:
         '\.(ico|flv|pdf|mov|mp3|wmv|ppt)$':
           allow: true
           expires: 300s
+          headers:
+            cache-control: "public"
 
         '\.(gif|jpg|jpeg|png|swf|txt|js|css)$':
           allow: true
           expires: 3600s
+          headers:
+            cache-control: "public"
