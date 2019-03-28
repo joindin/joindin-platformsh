@@ -57,17 +57,17 @@ web:
       root: "joindin-web2/web"
       passthru: "/index.php"
       rules:
-          "\.(ico|flv|pdf|mov|mp3|wmv|ppt)$":
+          '\.(ico|flv|pdf|mov|mp3|wmv|ppt)$':
             allow: true
             expires: 300s
             headers:
-              Cache-Control: "public"
+              cache-control: "public"
 
-          "\.(gif|jpg|jpeg|png|swf|txt|js|css)$":
+          '\.(gif|jpg|jpeg|png|swf|txt|js|css)$':
             allow: true
             expires: 3600s
             headers:
-              Cache-Control: "public"
+              cache-control: "public"
 
 
 variables:
