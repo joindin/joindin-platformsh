@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
 ENVIRONMENT=$(git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/\1/p')
 
-if [ -x "$(command -v platform)" ]; then
-    platform snapshot:create
+SNAPSHOT=false
+if (${ENVIRONMENT} == "master"); then
+    SNAPSHOT=true
+fi
+
+SNAPSHOT=${1:-$SNAPSHOT}
+
+if ${SNAPSHOT}; then
+    if [ -x "$(command -v platform)" ]; then
+        platform snapshot:create
+    fi
 fi
 
 STASHED=false
@@ -18,5 +27,4 @@ if ${STASHED}; then
     git stash pop
 fi
 
-ENVIRONMENT=${1:-$ENVIRONMENT}
 git push -u origin ${ENVIRONMENT}
