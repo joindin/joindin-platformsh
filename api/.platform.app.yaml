@@ -69,10 +69,10 @@ web:
           allow: true
           expires: 300s
           headers:
-            Cache-Control: "public"
+            cache-control: "public"
 
         "\.(gif|jpg|jpeg|png|swf|txt|js|css)$":
           allow: true
           expires: 3600s
           headers:
-            Cache-Control: "public"
+            cache-control: "public"
