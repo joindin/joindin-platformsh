@@ -65,14 +65,10 @@ web:
       root: "joindin-api/tmp"
       scripts: false
       rules:
-        "\.(ico|flv|pdf|mov|mp3|wmv|ppt)$":
+        '\.(ico|flv|pdf|mov|mp3|wmv|ppt)$':
           allow: true
           expires: 300s
-          headers:
-            cache-control: "public"
 
-        "\.(gif|jpg|jpeg|png|swf|txt|js|css)$":
+        '\.(gif|jpg|jpeg|png|swf|txt|js|css)$':
           allow: true
           expires: 3600s
-          headers:
-            cache-control: "public"
