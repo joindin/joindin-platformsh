@@ -5,6 +5,9 @@
 "https://{default}/inc/":
   type: upstream
   upstream: "api:http"
+  cache:
+    enabled: true
+    default_ttl: 300
 
 "https://api.{default}/":
   type: upstream
