@@ -2,7 +2,7 @@
 ENVIRONMENT=$(git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/\1/p')
 
 SNAPSHOT=false
-if (${ENVIRONMENT} == "master"); then
+if ("${ENVIRONMENT}" eq "master"); then
     SNAPSHOT=true
 fi
 
