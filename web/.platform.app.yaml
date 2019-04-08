@@ -32,6 +32,7 @@ hooks:
   #  rm web/app_dev.php
   # Deploy hooks can access services but the file system is now read-only.
   deploy: |
+    rm -rf /tmp/joindin-twig-cache/*
   #  app/console --env=prod cache:clear
 
 
