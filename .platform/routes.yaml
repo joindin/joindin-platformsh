@@ -1,27 +1,27 @@
-"https://{default}/":
+"https://{all}/":
   type: upstream
   upstream: "web:http"
 
-"https://{default}/inc/":
+"https://{all}/inc/":
   type: upstream
   upstream: "api:http"
   cache:
     enabled: true
     default_ttl: 300
 
-"https://api.{default}/":
+"https://api.{all}/":
   type: upstream
   id: "api"
   upstream: "api:http"
 
-"https://www.{default}/":
+"https://www.{all}/":
   type: redirect
-  to: "https://{default}/"
+  to: "https://{all}/"
 
-"http://{default}/":
+"http://{all}/":
   type: redirect
-  to: "https://{default}/"
+  to: "https://{all}/"
 
-"http://www.{default}/":
+"http://www.{all}/":
   type: redirect
-  to: "https://{default}/"
+  to: "https://{all}/"
