@@ -1,27 +1,54 @@
-"https://{all}/":
+"https://{default}/":
   type: upstream
   upstream: "web:http"
 
-"https://{all}/inc/":
+"https://{default}/inc/":
   type: upstream
   upstream: "api:http"
   cache:
     enabled: true
     default_ttl: 300
 
-"https://api.{all}/":
+"https://api.{default}/":
   type: upstream
   id: "api"
   upstream: "api:http"
 
-"https://www.{all}/":
+"https://www.{default}/":
   type: redirect
-  to: "https://{all}/"
+  to: "https://{default}/"
 
-"http://{all}/":
+"http://{default}/":
   type: redirect
-  to: "https://{all}/"
+  to: "https://{default}/"
 
-"http://www.{all}/":
+"http://www.{default}/":
   type: redirect
-  to: "https://{all}/"
+  to: "https://{default}/"
+
+"https://direct.joind.in/":
+  type: upstream
+  upstream: "web:http"
+
+"https://direct.joind.in/inc/":
+  type: upstream
+  upstream: "api:http"
+  cache:
+    enabled: true
+    default_ttl: 300
+
+"https://api.direct.joind.in/":
+  type: upstream
+  upstream: "api:http"
+
+"https://www.direct.joind.in/":
+  type: redirect
+  to: "https://direct.joind.in/"
+
+"http://direct.joind.in/":
+  type: redirect
+  to: "https://direct.joind.in/"
+
+"http://www.direct.joind.in/":
+  type: redirect
+  to: "https://direct.joind.in/"
