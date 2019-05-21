@@ -18,6 +18,8 @@ build:
 runtime:
   extensions:
     - redis
+  sizing_hints:
+    request_memory: 10
 
 relationships:
   redis: "redis:redis"
