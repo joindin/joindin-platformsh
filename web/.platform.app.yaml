@@ -18,6 +18,7 @@ build:
 runtime:
   extensions:
     - redis
+    - newrelic
   sizing_hints:
     request_memory: 10
 
