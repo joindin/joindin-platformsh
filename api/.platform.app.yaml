@@ -5,6 +5,7 @@ name: 'api'
 
 # The type key specifies the language and version for your application.
 type: 'php:7.3'
+size: M
 
 # On PHP, there are multiple build flavors available. Pretty much everyone
 # except Drupal 7 users will want the composer flavor.
