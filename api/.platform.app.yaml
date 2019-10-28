@@ -60,7 +60,7 @@ mounts:
 web:
   locations:
     "/":
-      root: "joindin-api/src/public"
+      root: "joindin-api/public"
       passthru: "/index.php"
       #index:
       #  - index.php
