@@ -27,4 +27,4 @@ if ${STASHED}; then
     git stash pop
 fi
 
-git push -u origin ${ENVIRONMENT}
+git push -u origin "${ENVIRONMENT}"

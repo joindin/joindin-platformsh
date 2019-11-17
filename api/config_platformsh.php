@@ -2,26 +2,24 @@
 ini_set('display_errors', 0);
 
 $variables = json_decode(base64_decode($_ENV['PLATFORM_VARIABLES']), true);
+$mode = $variables['api.config.mode'];
 
 if (empty($variables)) {
     throw new \Exception("PLATFORM_VARIABLES Not Set Or Empty.");
 }
 
 $smtpHost = getenv('PLATFORM_SMTP_HOST');
-if (empty($smtpHost)) {
-    throw new Exception('PLATFORM_SMTP_HOST not set or empty.');
-}
-
-if ('development' == $variables['api.config.mode']) {
+if ('development' == $mode) {
     error_reporting(-1);
     ini_set('display_errors', 1);
     ini_set('html_errors', 1);
     ini_set('display_startup_errors', 1);
+} elseif (empty($smtpHost)) {
+    throw new Exception('PLATFORM_SMTP_HOST not set or empty.');
 }
 
-
-$config = [
-    'mode'        => $variables['api.config.mode'],
+return [
+    'mode'        => $mode,
 
     // the URL of web2 website is used in links within emails
     'website_url' => $variables['api.config.website_url'],

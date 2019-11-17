@@ -16,6 +16,5 @@ mysql:
         privileges:
           joindin: rw
 
-
 redis:
   type: redis:5.0
