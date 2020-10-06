@@ -2,7 +2,7 @@
 #wipe the db make sure you have a good backup if that is your intent.
 mysql:
   type: mysql:10.0
-  disk: 512
+  disk: 1024
   configuration:
     schemas:
       - joindin
