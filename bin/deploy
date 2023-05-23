@@ -8,11 +8,11 @@ fi
 
 SNAPSHOT=${1:-$SNAPSHOT}
 
-if ${SNAPSHOT}; then
-    if [[ -x "$(command -v platform)" ]]; then
-        platform backup:create --live --project joindin --environment "${ENVIRONMENT}" -vvv
-    fi
-fi
+#if ${SNAPSHOT}; then
+#    if [[ -x "$(command -v platform)" ]]; then
+#        platform backup:create --live --project joindin --environment "${ENVIRONMENT}" -vvv
+#    fi
+#fi
 
 STASHED=false
 if ! git diff-index --quiet HEAD --; then
