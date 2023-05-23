@@ -10,7 +10,7 @@ SNAPSHOT=${1:-$SNAPSHOT}
 
 if ${SNAPSHOT}; then
     if [[ -x "$(command -v platform)" ]]; then
-        platform snapshot:create --project=joindin --environment="${ENVIRONMENT}"
+        platform backup:create --live --project joindin --environment "${ENVIRONMENT}" -vvv
     fi
 fi
 
