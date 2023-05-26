@@ -1,10 +1,16 @@
 # joindin-platformsh
 The deploy Repo for platform.sh
 
+#### Initial Setup
+
+Clone this repo locally, then run `git submodule update --init --recursive` to get the currently-pinned versions of
+`api` and `web2` repos.
+
 #### To Deploy:
 Switch to the branch you're ready to deploy (master|staging).
 
 `./bin/deploy [<snapshot>]`
+
 #### Snapshot (optional)
 If the platform.sh cli is installed and properly configured it will perform a snapshot before firing off a deploy.
 
