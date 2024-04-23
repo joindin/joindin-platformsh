@@ -4,7 +4,7 @@
 name: 'api'
 
 # The type key specifies the language and version for your application.
-type: 'php:8.2'
+type: 'php:8.3'
 size: M
 
 # On PHP, there are multiple build flavors available. Pretty much everyone
